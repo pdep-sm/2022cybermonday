@@ -3,7 +3,6 @@ class Producto {
 	
 	method costo()
 	
-	//template method
 	method precio() = self.costo()
 	
 	method estaEnPromo() = false 
@@ -13,13 +12,12 @@ class Producto {
 }
 
 class ConPromocion inherits  Producto { //Decorator
-	
+	//Punto 9 Bonus
 	const producto
 	var property porcentajeDescuento
 	
 	override method costo() = producto.costo()
 	
-	//template method
 	override method precio() = self.costo() * ( 1 - porcentajeDescuento/100)
 	
 	override method estaEnPromo() = true 
